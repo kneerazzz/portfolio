@@ -25,7 +25,7 @@ export default function HeroSection() {
       <div className={`relative w-40 h-40 mb-2 rounded-full overflow-hidden border-4 border-gray-600 shadow-xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="absolute inset-0 bg-gradient-to-r from-white to-gray-500 opacity-0 hover:opacity-20 transition-opacity duration-300 z-10"></div>
         <Image
-          src="/your-image.png" // Replace with your image
+          src="/me.png"
           alt="Neeraj profile"
           fill
           className="object-cover"

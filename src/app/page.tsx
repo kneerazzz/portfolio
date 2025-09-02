@@ -5,7 +5,6 @@ import Header from "@/components/header";
 import HeroSection from "@/components/heroSection";
 import Projects from "@/components/projects";
 import Skills from "@/components/skills";
-import Image from "next/image";
 
 export default function Home() {
   return (

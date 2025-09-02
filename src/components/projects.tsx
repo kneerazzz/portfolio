@@ -31,7 +31,7 @@ const ProjectsSection = () => {
       description:
         "A robust full-stack EdTech platform. It dynamically generates daily learning topics, tracks user progress, and gamifies skill development with interactive challenges and personalized learning paths. Real-time updates and responsive UI ensure a smooth experience across devices.",
       icon: <HiAcademicCap className="w-6 h-6" />,
-      imageUrl: "/images/skillsprint.png",
+      imageUrl: "/chulbul1.jpg",
       demoUrl: "https://chulbul.vercel.app",
       githubUrl: "#",
       technologies: [
@@ -52,7 +52,7 @@ const ProjectsSection = () => {
       description:
         "A blog app I built for sharing ideas. Clean, responsive, and easy to write/read posts.",
       icon: <HiPencilAlt className="w-6 h-6" />,
-      imageUrl: "/images/troyblog.png",
+      imageUrl: "/troyy.jpg",
       demoUrl: "https://troyy.netlify.app/",
       githubUrl: "#",
       technologies: [
@@ -69,7 +69,7 @@ const ProjectsSection = () => {
       description:
         "Full-featured YouTube backend: video uploads, auth, playlists, and subscriptions. Focused on core functionality without front-end distractions.",
       icon: <HiPlay className="w-6 h-6" />,
-      imageUrl: "/images/youtube-backend.png",
+      imageUrl: "/youtube.jpg",
       demoUrl: null,
       githubUrl: "https://github.com/kneerazzz/Backend/tree/main/whossshhh",
       technologies: [

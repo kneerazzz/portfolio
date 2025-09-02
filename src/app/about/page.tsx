@@ -1,4 +1,4 @@
-"use client";
+
 
 
 /*
@@ -139,6 +139,33 @@ export default function About() {
 }
 
 */
+
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About | Troyy",
+  description: "Learn more about Troyy — Developer • Gamer • Delusional",
+  openGraph: {
+    title: "About | Troyy",
+    description: "Learn more about Troyy — Developer • Gamer • Delusional",
+    url: "https://yourdomain.com/about",
+    images: [
+      {
+        url: "/og-about.png", // custom image in public folder
+        width: 1200,
+        height: 630,
+        alt: "About Troyy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About | Troyy",
+    description: "Learn more about Troyy — Developer • Gamer • Delusional",
+    images: ["/og-about.png"],
+  },
+};
+
 
 export default function About() {
   return (
