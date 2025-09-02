@@ -85,10 +85,10 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Background blobs */}
-      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gray-100 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-      <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-      <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+      {/* Dark background blobs to match portfolio theme */}
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gray-800/30 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob"></div>
+      <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-blue-900/30 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-2000"></div>
+      <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-purple-900/30 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-4000"></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
         <h2
@@ -96,7 +96,7 @@ const ProjectsSection = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-gray-500">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">
             Projects
           </span>
         </h2>
@@ -105,84 +105,92 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`group relative bg-zinc-800 rounded-xl p-6 border border-gray-700 transition-all duration-500 hover:border-gray-600 hover:shadow-lg hover:-translate-y-1 ${
+              className={`group relative bg-gray-900/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-800 transition-all duration-500 hover:border-gray-600 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               } ${project.featured ? "md:col-span-2 lg:col-span-1" : ""}`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
               {project.imageUrl && (
-                <img
-                  src={project.imageUrl}
-                  alt={project.title}
-                  className="w-full h-40 object-cover rounded-lg mb-4 group-hover:scale-105 transition-transform duration-300"
-                />
+                <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
+                  <img
+                    src={project.imageUrl}
+                    alt={project.title}
+                    className="w-full h-full object-contain group-hover:scale-110 transition-all duration-700 ease-out"
+                  />
+                  {/* Dark overlay to blend with portfolio theme */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent"></div>
+                  {/* Subtle border at bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+                </div>
               )}
 
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center space-x-3">
-                  <div className="text-blue-400 group-hover:text-blue-300 transition-colors duration-300">
-                    {project.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white group-hover:text-gray-100 transition-colors duration-300">
-                      {project.title}
-                    </h3>
-                    <span className="text-xs font-medium px-2 py-1 bg-gray-700 text-gray-300 rounded-full">
-                      {project.category}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex space-x-2">
-                  {project.demoUrl && (
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
-                      title="Live Demo"
-                    >
-                      <BiLinkExternal className="w-5 h-5" />
-                    </a>
-                  )}
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors duration-300"
-                      title="View Code"
-                    >
-                      <SiGithub className="w-5 h-5" />
-                    </a>
-                  )}
-                </div>
-              </div>
-
-              <p className="text-gray-300 text-sm mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                {project.description}
-              </p>
-
-              <div className="space-y-3">
-                <h4 className="text-xs font-medium text-gray-400 uppercase tracking-wider">
-                  Technologies
-                </h4>
-                <div className="flex flex-wrap gap-y-2 gap-x-1.5">
-                  {project.technologies.map((tech, techIndex) => (
-                    <div
-                      key={techIndex}
-                      className="flex items-center space-x-1.5 bg-gray-700 rounded-lg px-3 py-1.5 border border-gray-600 group-hover:border-gray-500 transition-all duration-250"
-                    >
-                      <div className="text-white">{tech.icon}</div>
-                      <span className="text-xs font-medium text-white">{tech.name}</span>
+              <div className="p-6">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="text-blue-400 group-hover:text-blue-300 transition-colors duration-300">
+                      {project.icon}
                     </div>
-                  ))}
+                    <div>
+                      <h3 className="text-lg font-semibold text-white group-hover:text-gray-100 transition-colors duration-300">
+                        {project.title}
+                      </h3>
+                      <span className="text-xs font-medium px-2 py-1 bg-gray-800 text-gray-300 rounded-full">
+                        {project.category}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex space-x-2">
+                    {project.demoUrl && (
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                        title="Live Demo"
+                      >
+                        <BiLinkExternal className="w-5 h-5" />
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-white transition-colors duration-300"
+                        title="View Code"
+                      >
+                        <SiGithub className="w-5 h-5" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                <p className="text-gray-300 text-sm mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                  {project.description}
+                </p>
+
+                <div className="space-y-3">
+                  <h4 className="text-xs font-medium text-gray-400 uppercase tracking-wider">
+                    Technologies
+                  </h4>
+                  <div className="flex flex-wrap gap-y-2 gap-x-1.5">
+                    {project.technologies.map((tech, techIndex) => (
+                      <div
+                        key={techIndex}
+                        className="flex items-center space-x-1.5 bg-gray-800/80 rounded-lg px-3 py-1.5 border border-gray-700 group-hover:border-gray-600 transition-all duration-250"
+                      >
+                        <div className="text-white">{tech.icon}</div>
+                        <span className="text-xs font-medium text-white">{tech.name}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
               {project.featured && (
                 <div className="absolute top-4 right-4">
-                  <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs font-medium px-2 py-1 rounded-full">
+                  <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs font-medium px-2 py-1 rounded-full shadow-lg">
                     Featured
                   </div>
                 </div>
@@ -200,7 +208,7 @@ const ProjectsSection = () => {
             href="https://github.com/kneerazzz"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 bg-zinc-700 text-white px-6 py-3 rounded-lg border border-gray-600 hover:border-gray-500 hover:bg-zinc-600 transition-all duration-300 group"
+            className="inline-flex items-center space-x-2 bg-gray-800/80 backdrop-blur-sm text-white px-6 py-3 rounded-lg border border-gray-700 hover:border-gray-600 hover:bg-gray-700/80 transition-all duration-300 group"
           >
             <SiGithub className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
             <span className="font-medium">View More Projects</span>

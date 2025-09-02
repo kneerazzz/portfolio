@@ -1,5 +1,6 @@
 "use client";
 
+import { IconArticle } from "@tabler/icons-react";
 import { Instagram } from "lucide-react";
 import { FiCoffee } from "react-icons/fi";
 import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
@@ -10,6 +11,7 @@ export default function Footer() {
     { name: "LinkedIn", url: "https://linkedin.com/in/neeraj", icon: <SiLinkedin className="w-6 h-6" /> },
     { name: "X", url: "https://x.com/xllyod", icon: <SiX className="w-6` h-6" /> },
     { name: "Instagram", url: "https://instagram.com/kneerazzz", icon: <Instagram className="w-6 h-6" /> },
+    { name: "Blog", url: "https://blog.com/kneerazzz", icon: <IconArticle className="w-6 h-6" />}
   ];
 
   return (

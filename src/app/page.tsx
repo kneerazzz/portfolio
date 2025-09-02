@@ -1,3 +1,4 @@
+import BackgroundParticles from "@/components/background";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 import GitHubStats from "@/components/githubContributions";
@@ -8,7 +9,8 @@ import Skills from "@/components/skills";
 
 export default function Home() {
   return (
-    <div>
+    <main className="relative min-h-screen">
+      <BackgroundParticles />
       <Header />
       <HeroSection />
       <Skills />
@@ -16,6 +18,6 @@ export default function Home() {
       <GitHubStats />
       <Contact />
       <Footer />
-    </div>
+    </main>
   );
 }
