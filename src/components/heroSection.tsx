@@ -22,7 +22,7 @@ export default function HeroSection() {
       <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
 
       {/* Profile Image */}
-      <div className={`relative w-40 h-40 mb-8 rounded-full overflow-hidden border-4 border-gray-600 shadow-xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div className={`relative w-40 h-40 mb-2 rounded-full overflow-hidden border-4 border-gray-600 shadow-xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="absolute inset-0 bg-gradient-to-r from-white to-gray-500 opacity-0 hover:opacity-20 transition-opacity duration-300 z-10"></div>
         <Image
           src="/your-image.png" // Replace with your image
@@ -54,13 +54,7 @@ export default function HeroSection() {
             Read more →
         </a>
       </div>
-      {/* Scroll indicator */}
-      <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-        <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-gray-500 rounded-full mt-2 animate-bounce"></div>
-        </div>
-      </div>
-
+      
       <style jsx>{`
         @keyframes blob {
           0% {
