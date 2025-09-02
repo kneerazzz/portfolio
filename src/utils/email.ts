@@ -5,7 +5,6 @@ interface SendEmailOptions {
   subject?: string;
   message?: string;
   html?: string;
-  from?: string;
   name?: string;
   email?: string;
 }
@@ -22,17 +21,17 @@ const transporter = nodemailer.createTransport({
 export const sendEmail = async ({
   subject,
   message,
-  from,
+  name,
   email,
 }: SendEmailOptions): Promise<void> => {
   try {
     const info = await transporter.sendMail({
-    from: `"${from}" <${process.env.EMAIL_USER}>`,
+    from: `"${name}" <${process.env.EMAIL_USER}>`,
     to: process.env.MY_EMAIL,
     subject: subject || "Mail from client",
-    text: `${message}\n\nFrom: ${from} <${email}>`,
-    html: `<p>${message}</p><p>From: <strong>${from}</strong> &lt;${email}&gt;</p>`,
-    replyTo: `${from} <${email}>`, // lets you reply directly to the user
+    text: `${message}\n\nFrom: ${name} <${email}>`,
+    html: `<p>${message}</p><p>From: <strong>${name}</strong> &lt;${email}&gt;</p>`,
+    replyTo: `${name} <${email}>`, // lets you reply directly to the user
     });
     console.log("Email sent:", info.messageId);
   } catch (error: unknown) {

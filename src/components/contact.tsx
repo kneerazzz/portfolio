@@ -1,11 +1,9 @@
 "use client";
 
 import { useState, FormEvent, ChangeEvent } from "react";
-import { SiGmail } from "react-icons/si";
 import { FiSend, FiMail, FiMessageSquare, FiUser } from "react-icons/fi";
 import { Mail } from "lucide-react";
-import { sendEmail } from "@/utils/email";
-import { text } from "stream/consumers";
+import { toast } from "sonner";
 
 interface FormData {
   email: string;
@@ -20,7 +18,6 @@ export default function Contact() {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [submitStatus, setSubmitStatus] = useState<string | null>(null);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -29,25 +26,31 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-        await sendEmail({
-            ...formData,
-            subject: "Email from client"
-        })
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setSubmitStatus("success");
-      setFormData({ email: "", message: "", name: ""});
-    } catch (error) {
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus(null), 3000);
-    }
-  };
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true)
+
+        try {
+            const res = await fetch("/api/email", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+            const data = await res.json();
+            if (data.success) {
+                toast.success("Message sent successfully!")
+                setIsSubmitting(false)
+                setFormData({ name: "", email: "", message: "" });
+            } else {
+                toast.error("Error sending message.")
+                toast.info("Please try again.")
+                setIsSubmitting(false)
+            }
+        } catch (err: any) {
+            toast.error("Error submitting form", err)
+            setIsSubmitting(false)
+        }
+    };
 
   return (
     <section id="contact" className="py-12 px-4 sm:px-6">
@@ -60,18 +63,6 @@ export default function Contact() {
         </div>
 
         <form onSubmit={handleSubmit} className="bg-white/10 p-5 border border-gray-700 rounded-lg shadow-sm">
-          {submitStatus === "success" && (
-            <div className="mb-4 p-2 bg-green-100 text-green-700 text-sm rounded text-center">
-              Message sent successfully!
-            </div>
-          )}
-          {submitStatus === "error" && (
-            <div className="mb-4 p-2 bg-red-100 text-red-700 text-sm rounded text-center">
-              Error sending message. Please try again.
-            </div>
-          )}
-
-
           <div className="mb-4">
             <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
