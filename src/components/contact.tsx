@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent, ChangeEvent } from "react";
+import { useState, ChangeEvent } from "react";
 import { FiSend, FiMail, FiMessageSquare, FiUser } from "react-icons/fi";
 import { Mail } from "lucide-react";
 import { toast } from "sonner";
@@ -46,8 +46,9 @@ export default function Contact() {
                 toast.info("Please try again.")
                 setIsSubmitting(false)
             }
-        } catch (err: any) {
-            toast.error("Error submitting form", err)
+        } catch (err) {
+            toast.error("Error submitting form")
+            console.error(err)
             setIsSubmitting(false)
         }
     };

@@ -9,7 +9,6 @@ import {
   SiNodedotjs,
   SiExpress,
   SiMongodb,
-  SiAppwrite,
   SiGithub,
   SiCloudinary,
   SiTypescript,
@@ -17,6 +16,7 @@ import {
 } from "react-icons/si";
 import { BiCloud, BiLinkExternal } from "react-icons/bi";
 import { HiAcademicCap, HiPencilAlt, HiPlay } from "react-icons/hi";
+import Image from "next/image";
 
 const ProjectsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -112,15 +112,17 @@ const ProjectsSection = () => {
             >
               {project.imageUrl && (
                 <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
-                  <img
-                    src={project.imageUrl}
-                    alt={project.title}
-                    className="w-full h-full object-contain group-hover:scale-110 transition-all duration-700 ease-out"
-                  />
-                  {/* Dark overlay to blend with portfolio theme */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent"></div>
-                  {/* Subtle border at bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+                    <Image
+                        width={500}
+                        height={700}
+                        src={project.imageUrl}
+                        alt={project.title}
+                        className="w-full h-full object-contain group-hover:scale-110 transition-all duration-700 ease-out"
+                    />
+                    {/* Dark overlay to blend with portfolio theme */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent"></div>
+                    {/* Subtle border at bottom */}
+                    <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
                 </div>
               )}
 

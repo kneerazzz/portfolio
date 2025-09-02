@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function HeroSection() {
@@ -36,7 +35,7 @@ export default function HeroSection() {
 
       {/* Name */}
       <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        Hey, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-600">Neeraj</span>
+        Hey, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-600">Neeraj</span>
       </h1>
 
       {/* Description */}

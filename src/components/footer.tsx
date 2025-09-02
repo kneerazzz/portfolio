@@ -17,7 +17,7 @@ export default function Footer() {
   return (
     <footer className="text-gray-200 pb-8 px-4">
       <div className="max-w-2xl mx-auto text-center">
-        <h3 className="font-semibold text-2xl mb-6">Let's connect</h3>
+        <h3 className="font-semibold text-2xl mb-6">Let&apos;s connect</h3>
         <div className="flex justify-center space-x-4 mb-6 gap-2">
           {contactLinks.map((link, idx) => (
             <a
