@@ -86,14 +86,14 @@ const SkillsSection = () => {
       <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
 
       <div className="max-w-3xl mx-auto relative z-10">
-        <h2 className={`text-2xl md:text-3xl font-bold text-start mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-gray-500">Skills</span>
+        <h2 className={`text-2xl md:text-4xl font-bold text-start mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Skills</span>
         </h2>
 
         <div className="space-y-8">
           {skillCategories.map((category, categoryIndex) => (
             <div key={categoryIndex} className={`transition-all duration-700 delay-${categoryIndex * 100} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <h3 className="text-lg font-medium mb-4 from-white to-gray-500 text-transparent bg-clip-text bg-gradient-to-r border-b border-gray-100 pb-2">
+              <h3 className="text-lg font-medium mb-4 from-gray-300 to-gray-500 text-transparent bg-clip-text bg-gradient-to-r border-b border-gray-100 pb-2">
                 {category.title}
               </h3>
               <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3">

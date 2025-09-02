@@ -14,7 +14,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="flex flex-col items-center justify-center min-h-screen py-16 px-4 sm:px-6 text-center relative overflow-hidden"
+      className="flex flex-col items-center justify-center pt-40 pb-17 px-4 sm:px-6 text-center relative overflow-hidden"
     >
       {/* Background elements */}
       <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-gray-100 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
@@ -54,7 +54,7 @@ export default function HeroSection() {
             Read more →
         </a>
       </div>
-      
+
       <style jsx>{`
         @keyframes blob {
           0% {
