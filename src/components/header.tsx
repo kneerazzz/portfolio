@@ -12,14 +12,14 @@ export default function Header() {
     { href: "/", icon: <Home size={18} />, label: "Home" },
     { href: "#skills", icon: <IconPuzzle size={18} />, label: "Skills" },
     { href: "#projects", icon: <IconRocket size={18} />, label: "Projects" },
-    { href: "#blogs", icon: <IconArticle size={18} />, label: "Blogs" },
+    { href: "/about", icon: <User size={18} />, label: "About" },
   ];
 
   const socialLinks = [
     { href: "https://github.com/yourusername", icon: <Github size={18} />, label: "GitHub" },
     { href: "https://x.com/yourhandle", icon: <X size={18} />, label: "Twitter" },
     { href: "https://linkedin.com/in/yourprofile", icon: <Linkedin size={18} />, label: "LinkedIn" },
-    { href: "https://instagram.com/kneerazzz", icon: <Instagram size={18} />, label: "Instagram"}
+    { href: "/", icon: <IconArticle size={18} />, label: "Blogs"}
   ];
 
   return (

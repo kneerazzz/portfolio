@@ -79,7 +79,7 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="skills" className="pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background elements matching hero section */}
       <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gray-100 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
       <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
@@ -96,7 +96,7 @@ const SkillsSection = () => {
               <h3 className="text-lg font-medium mb-4 from-white to-gray-500 text-transparent bg-clip-text bg-gradient-to-r border-b border-gray-100 pb-2">
                 {category.title}
               </h3>
-              <div className="grid cursor-pointer grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3">
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3">
                 {category.skills.map((skill, index) => (
                   <div
                     key={index}
