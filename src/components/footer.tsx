@@ -34,7 +34,7 @@ export default function Footer() {
         </div>
         <div className="flex justify-center gap-3">
             <p>CAFFEINATE ME</p>
-            <FiCoffee href="https://buymeacoffee.com/kneerazzz" className="transition-transform hover:scale-110 cursor-pointer w-6 h-6" />
+            <a<FiCoffee href="https://buymeacoffee.com/kneerazzz" className="transition-transform hover:scale-110 cursor-pointer w-6 h-6" />/a>
         </div>
       </div>
     </footer>
