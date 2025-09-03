@@ -1,3 +1,5 @@
+export const runtime = "nodejs";
+
 import { NextResponse } from "next/server";
 import { sendEmail } from "@/utils/email";
 
@@ -14,7 +16,10 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ success: true });
   } catch (err) {
-    console.error(err);
-    return NextResponse.json({ success: false, error: "Failed to send email" }, { status: 500 });
+    console.error("EMAIL ERROR:", err);
+    return NextResponse.json(
+      { success: false, error: String(err) },
+      { status: 500 }
+    );
   }
 }

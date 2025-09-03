@@ -14,6 +14,10 @@ export default function Footer() {
     { name: "Blog", url: "https://blog.com/kneerazzz", icon: <IconArticle className="w-6 h-6" />}
   ];
 
+  const coffeelink = {
+    name: "Coffee", url: "https://buymeacoffee.com/kneerazzz", icon: <FiCoffee className="w-6 h-6" />
+  }
+
   return (
     <footer className="text-gray-200 pb-8 px-4">
       <div className="max-w-2xl mx-auto text-center">
@@ -34,7 +38,15 @@ export default function Footer() {
         </div>
         <div className="flex justify-center gap-3">
             <p>CAFFEINATE ME</p>
-            <a<FiCoffee href="https://buymeacoffee.com/kneerazzz" className="transition-transform hover:scale-110 cursor-pointer w-6 h-6" />/a>
+            <a
+              href={coffeelink.url}
+              target="_blank"
+              rel="noopenner noreferrer"
+              className="transition-transform hover:scale-110"
+              title={coffeelink.name}
+            >
+              {coffeelink.icon}
+            </a>
         </div>
       </div>
     </footer>
