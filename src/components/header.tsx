@@ -16,9 +16,9 @@ export default function Header() {
   ];
 
   const socialLinks = [
-    { href: "https://github.com/yourusername", icon: <Github size={18} />, label: "GitHub" },
-    { href: "https://x.com/yourhandle", icon: <X size={18} />, label: "Twitter" },
-    { href: "https://linkedin.com/in/yourprofile", icon: <Linkedin size={18} />, label: "LinkedIn" },
+    { href: "https://github.com/kneerazzz", icon: <Github size={18} />, label: "GitHub" },
+    { href: "https://x.com/xllyod", icon: <X size={18} />, label: "Twitter" },
+    { href: "https://linkedin.com/in/kneerazzz", icon: <Linkedin size={18} />, label: "LinkedIn" },
     { href: "/", icon: <IconArticle size={18} />, label: "Blogs" },
   ];
 
