@@ -32,7 +32,7 @@ const ProjectsSection = () => {
         "A robust full-stack EdTech platform. It dynamically generates daily learning topics, tracks user progress, and gamifies skill development with interactive challenges and personalized learning paths. Real-time updates and responsive UI ensure a smooth experience across devices.",
       icon: <HiAcademicCap className="w-6 h-6" />,
       imageUrl: "/chulbul1.jpg",
-      demoUrl: "https://chulbul.vercel.app",
+      demoUrl: "https://gradiva.vercel.app",
       githubUrl: "#",
       technologies: [
         { name: "Next.js", icon: <SiNextdotjs className="w-5 h-5" /> },

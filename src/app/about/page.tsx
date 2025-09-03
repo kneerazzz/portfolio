@@ -139,19 +139,19 @@ export default function About() {
 }
 
 */
-
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About | Troyy",
-  description: "Learn more about Troyy — Developer • Gamer • Delusional",
+  description: "Learn more about Troyy — Developer • Delusional • Lifelong Learner",
   openGraph: {
     title: "About | Troyy",
-    description: "Learn more about Troyy — Developer • Gamer • Delusional",
-    url: "https://yourdomain.com/about",
+    description: "Learn more about Troyy — Developer • Delusional • Lifelong Learner",
+    url: "https://kneerazzz.vercel.app/about",
     images: [
       {
-        url: "/og-about.png", // custom image in public folder
+        url: "/me.png",
         width: 1200,
         height: 630,
         alt: "About Troyy",
@@ -161,11 +161,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "About | Troyy",
-    description: "Learn more about Troyy — Developer • Gamer • Delusional",
-    images: ["/og-about.png"],
+    description: "Learn more about Troyy — Developer • Delusional • LIfelong Learner",
+    images: ["/me.png"],
   },
 };
-
 
 export default function About() {
   return (
@@ -174,7 +173,7 @@ export default function About() {
       <div className="space-y-2">
         <h1 className="text-4xl font-bold">About Me</h1>
         <p className="text-lg text-gray-600">
-          Neeraj • aka Troyy • Developer • Lifelong Learner
+          Neeraj • aka Troyy • Developer • Delusional • Lifelong Learner
         </p>
       </div>
 
@@ -213,7 +212,7 @@ export default function About() {
           and get AI-generated breakdowns and explanations. It tracks progress,
           introduces challenges, and makes self-learning more engaging.{" "}
           <a
-            href="https://chulbul.vercel.app/about"
+            href="https://gradiva.vercel.app/about"
             target="_blank"
             className="text-blue-500 underline"
           >
@@ -272,6 +271,16 @@ export default function About() {
           <span className="font-semibold">DSA and AI</span> to strengthen my
           fundamentals and explore new opportunities.
         </p>
+      </div>
+
+      {/* Back button */}
+      <div className="pt-6">
+        <Link
+          href="/"
+          className="inline-block px-4 py-2 rounded-lg bg-gray-700 text-white hover:bg-gray-500 transition-colors"
+        >
+          ← Back to Home
+        </Link>
       </div>
     </section>
   );
