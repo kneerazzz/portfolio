@@ -88,7 +88,7 @@ export default function About() {
         <p>
           Recognizing the frustration of scrubbing through long videos, I built{" "}
           <span className="font-semibold text-gray-900 dark:text-gray-100">Vindex</span>.
-          It's an AI-powered tool that lets you search *inside* YouTube videos.
+          It&#39;s an AI-powered tool that lets you search *inside* YouTube videos.
           Paste a URL, type your query, and Vindex pinpoints the exact timestamps
           where your topic is discussed using transcripts, embeddings, and vector search.{" "}
            <a
