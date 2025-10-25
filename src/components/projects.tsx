@@ -13,9 +13,11 @@ import {
   SiCloudinary,
   SiTypescript,
   SiGooglegemini,
+  SiPython,
+  SiHuggingface
 } from "react-icons/si";
 import { BiCloud, BiLinkExternal } from "react-icons/bi";
-import { HiAcademicCap, HiPencilAlt, HiPlay } from "react-icons/hi";
+import { HiAcademicCap, HiPencilAlt, HiPlay, HiOutlineSearchCircle } from "react-icons/hi";
 import Image from "next/image";
 
 const ProjectsSection = () => {
@@ -81,6 +83,28 @@ const ProjectsSection = () => {
       category: "Backend",
       featured: false,
     },
+    {
+      title: "Vindex",
+      description:
+        "AI-powered semantic search for YouTube videos. Enter a URL and query to find exact timestamps where topics are discussed. Uses transcripts (captions/Whisper), local AI embeddings (Python/Transformers), vector search (MongoDB Atlas), Node.js backend, and Next.js frontend.",
+      icon: <HiOutlineSearchCircle className="w-6 h-6" />, // Using Search icon
+      imageUrl: "/vindex.jpg", // Replace with an actual screenshot/logo path
+      demoUrl: "https://vindex0.vercel.app", // Your Vercel deployment URL
+      githubUrl: "https://github.com/kneerazzz/vindex", // Your GitHub repo URL
+      technologies: [
+        { name: "Next.js", icon: <SiNextdotjs className="w-5 h-5" /> },
+        { name: "Tailwind CSS", icon: <SiTailwindcss className="w-5 h-5" /> },
+        { name: "Node.js", icon: <SiNodedotjs className="w-5 h-5" /> },
+        { name: "Express", icon: <SiExpress className="w-5 h-5" /> },
+        { name: "MongoDB Atlas", icon: <SiMongodb className="w-5 h-5" /> },
+        { name: "TypeScript", icon: <SiTypescript className="w-5 h-5" /> },
+        { name: "Python", icon: <SiPython className="w-5 h-5" /> },
+        { name: "Hugging Face Transformers", icon: <SiHuggingface className="w-5 h-5" /> },
+        // { name: "Docker", icon: <FaDocker className="w-5 h-5" /> }, // Add if you dockerized the AI service
+      ],
+      category: "Full Stack AI", // Or "AI/ML", "Full Stack"
+      featured: true, // Mark as featured if desired
+    }
   ];
 
   return (
